@@ -1,4 +1,29 @@
 .container{
     margin: 100px;
     width: auto;
+    min-width: fit-content;
 }
+
+.custom-radio {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    border: 1px solid rgb(86, 80, 80);
+    border-radius: 50%;
+    cursor: pointer;
+    appearance: none; /* Remove default appearance */
+  }
+  
+  .custom-radio:checked::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    /* background-color: rgb(10, 48, 218); */
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    
+  }

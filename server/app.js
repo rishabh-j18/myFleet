@@ -10,8 +10,17 @@ const cookieParser = require('cookie-parser');
 
 const app=express();
 
-app.use(cookieParser);
-app.use(cors());
+app.use(cookieParser());
+app.use(cors({
+    origin: 'http://localhost:3000',
+    credentials: true
+}));
+
+app.options('*', cors({
+    origin: 'http://localhost:3000',
+    credentials: true
+}));
+
 app.use(express.json()); // parse the body in json without using body parser
 app.use(require('./router/auth'));
 

@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export const commonrequest = async (method, url, body, header) => {
+export const commonrequest = (method, url, body={}, header) => {
   const config = {
     method,
     url,
@@ -8,13 +8,12 @@ export const commonrequest = async (method, url, body, header) => {
     headers: header || {
       "Content-Type": "application/json",
     },
+    withCredentials: true
   };
 
-  return axios(config)
-    .then((data) => {
+  return axios(config).then((data) => {
       return data;
-    })
-    .catch((error) => {
+    }).catch((error) => {
       return error;
     });
 };

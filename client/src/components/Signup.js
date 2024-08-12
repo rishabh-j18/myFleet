@@ -54,7 +54,6 @@ const Signup = () => {
         setMobile("");
         toast.error(response.response.data.error);
       }
-
     }
   };
 
@@ -106,53 +105,60 @@ const Signup = () => {
           </div>
           <div className="mb-3">
             <label className="form-label">Gender</label>
-            <div
-              className="d-flex align-items-center"
-              style={{
-                border: "1px solid",
-                borderRadius: "7px",
-                height: "37px",
-              }}
-            >
-              <div className="form-check mx-2">
-                <input
-                  className="form-check-input"
-                  type="radio"
-                  name="gender"
-                  id="male"
-                  value="male"
-                  onChange={(e) => setGender(e.target.value)}
-                />
-                <label className="form-check-label" htmlFor="male">
-                  Male
-                </label>
-              </div>
-              <div className="form-check mx-2">
-                <input
-                  className="form-check-input"
-                  type="radio"
-                  name="gender"
-                  id="female"
-                  value="female"
-                  onChange={(e) => setGender(e.target.value)}
-                />
-                <label className="form-check-label" htmlFor="female">
-                  Female
-                </label>
+            <div className="d-flex align-items-center">
+              <div className="row w-100">
+                <div className="form-check col-12 col-md-auto mx-3">
+                  <input
+                    className="form-check-input custom-radio"
+                    type="radio"
+                    name="gender"
+                    id="male"
+                    value="male"
+                    onChange={(e) => setGender(e.target.value)}
+                  />
+                  <label className="form-check-label" htmlFor="male">
+                    Male
+                  </label>
+                </div>
+                <div className="form-check col-12 col-md-auto mx-3">
+                  <input
+                    className="form-check-input custom-radio"
+                    type="radio"
+                    name="gender"
+                    id="female"
+                    value="female"
+                    onChange={(e) => setGender(e.target.value)}
+                  />
+                  <label className="form-check-label" htmlFor="female">
+                    Female
+                  </label>
+                </div>
               </div>
             </div>
           </div>
-          <div className="mb-4">
-            <label className="form-label">Mobile</label>
-            <input
-              type="number"
-              aria-label="mobile"
-              className="form-control"
-              value={mobile}
-              onChange={(e) => setMobile(e.target.value)}
-              style={{ border: "1px solid", borderRadius: "7px" }}
-            />
+          <div className="row justify-content-between">
+            <div className="mb-4 col-12 col-md-6">
+              <label className="form-label">Mobile</label>
+              <input
+                type="number"
+                aria-label="mobile"
+                className="form-control"
+                value={mobile}
+                onChange={(e) => setMobile(e.target.value)}
+                style={{ border: "1px solid", borderRadius: "7px" }}
+              />
+            </div>
+            <div className="mb-4 col-12 col-md-6">
+              <label className="form-label">Role</label>
+              <select name="role" id="role" className="form-control">
+                <option value="car-provider">Car Provider</option>
+                <option value="car-renting" selected>
+                  Car Renting
+                </option>
+              </select>
+            </div>
           </div>
+
           <button type="submit" className="btn btn-primary">
             Submit
           </button>

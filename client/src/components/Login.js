@@ -26,11 +26,11 @@ const Login = () => {
           setMobile("");
           navigate("/otp", { state: mobile });
         } else {
-          toast.error(response?.data?.error || "An unexpected error occurred.");
+          toast.error("An unexpected error occurred.");
           setMobile("");
         }
       } catch (error) {
-        toast.error(error?.data?.error || "An error occurred. Please try again.");
+        toast.error( "An error occurred. Please try again.");
         setMobile("");
       }
     }

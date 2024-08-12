@@ -36,7 +36,7 @@ const Otp = () => {
           navigate('/');
         }, 6000);
       } else {
-        toast.error(response.data.error);
+        toast.error(response.response.data.error);
       }
     }
   }
